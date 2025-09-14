@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaussures de Sport Maroc - Votre Destination Ultime de Chaussures</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- For Arabic, ensure a font that supports Arabic script is available or loaded -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo" data-fr="Chaussures de Sport" data-ar="أحذية رياضية">Chaussures de Sport <span class="morocco" data-fr="Maroc" data-ar="المغرب">Maroc</span></h1>
+            <nav>
+                <ul>
+                    <li><a href="#products" data-fr="Chaussures" data-ar="الأحذية">Chaussures</a></li>
+                    <li><a href="#contact" data-fr="Contact" data-ar="اتصل بنا">Contact</a></li>
+                </ul>
+                <div class="language-switcher">
+                    <button id="lang-fr" class="lang-btn active" data-lang="fr">FR</button>
+                    <button id="lang-ar" class="lang-btn" data-lang="ar">AR</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h2 data-fr="Passez au Niveau Supérieur" data-ar="ارتقِ بمستواك">Passez au Niveau Supérieur</h2>
+            <p data-fr="Découvrez les dernières et meilleures chaussures de sport, livrées directement à votre porte." data-ar="اكتشف أحدث وأفضل الأحذية الرياضية، تصلك مباشرة إلى باب منزلك.">Découvrez les dernières et meilleures chaussures de sport, livrées directement à votre porte.</p>
+            <a href="#products" class="btn" data-fr="Achetez Maintenant" data-ar="تسوق الآن">Achetez Maintenant</a>
+        </div>
+    </section>
+
+    <section id="products" class="container">
+        <h2 data-fr="Notre Collection" data-ar="مجموعتنا">Notre Collection</h2>
+        <div class="product-grid" id="product-grid">
+            <!-- Les cartes de produits seront injectées ici par JavaScript -->
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 data-fr="Contactez-Nous" data-ar="تواصل معنا">Contactez-Nous</h2>
+            <p data-fr="Vous avez des questions ou êtes prêt à commander ? Contactez-nous via WhatsApp ou par téléphone !" data-ar="هل لديك أسئلة أو مستعد للطلب؟ اتصل بنا عبر الواتساب أو الهاتف!">Vous avez des questions ou êtes prêt à commander ? Contactez-nous via WhatsApp ou par téléphone !</p>
+            <div class="contact-info">
+                <a href="https://wa.me/2126XXXXXXXX" target="_blank" class="contact-btn whatsapp">
+                    <img src="images/whatsapp-icon.png" alt="Icône WhatsApp"> <span data-fr="WhatsApp Nous" data-ar="تواصل واتساب">WhatsApp Nous</span>
+                </a>
+                <a href="tel:+2126XXXXXXXX" class="contact-btn phone">
+                    <img src="images/phone-icon.png" alt="Icône Téléphone"> <span data-fr="Appelez-Nous" data-ar="اتصل بنا">Appelez-Nous</span>
+                </a>
+            </div>
+            <p class="cash-on-delivery" data-fr="Nous offrons le paiement à la livraison partout au Maroc !" data-ar="نقدم خدمة الدفع عند الاستلام في جميع أنحاء المغرب!">Nous offrons le paiement à la livraison partout au Maroc !</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> <span data-fr="Chaussures de Sport Maroc. Tous droits réservés." data-ar="أحذية رياضية المغرب. جميع الحقوق محفوظة.">Chaussures de Sport Maroc. Tous droits réservés.</span></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
