@@ -9,10 +9,10 @@
     "fr": "Product description in French",
     "ar": "وصف المنتج بالعربية"
   },
-  "image": "images/your-product.jpg",
+  "image": "images/s1.jpeg",
   "pricing": [
     {"quantity": 1, "price": 500, "type": "unit"},
-    {"quantity": 5, "price": 2300, "type": "bulk"}
+    {"quantity": 5, "price": 400, "type": "bulk"}
   ]
   }
 ]
