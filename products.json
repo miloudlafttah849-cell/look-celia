@@ -1,0 +1,18 @@
+[
+  {
+      "id": 7,
+  "title": {
+    "fr": "Your Product Name",
+    "ar": "اسم منتجك"
+  },
+  "description": {
+    "fr": "Product description in French",
+    "ar": "وصف المنتج بالعربية"
+  },
+  "image": "images/your-product.jpg",
+  "pricing": [
+    {"quantity": 1, "price": 500, "type": "unit"},
+    {"quantity": 5, "price": 2300, "type": "bulk"}
+  ]
+  }
+]
