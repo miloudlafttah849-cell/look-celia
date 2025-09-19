@@ -314,6 +314,8 @@ function handleTouchEnd() {
 
 // =================== INIT ===================
 window.onload = () => {
-  renderProducts();
-  applyFilters();
+  if (document.readyState === 'complete') {
+    renderProducts();
+    applyFilters();
+  }
 };
