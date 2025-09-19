@@ -1,9 +1,53 @@
-async function loadProducts() {
-  const res = await fetch("products.json");
-  allProducts = await res.json();
-  applyFilters();
+// Example products data
+const products = [
+  {
+    id: 1,
+    name: "Red Sneakers",
+    price: 50,
+    color: "Red",
+    size: "40",
+    gender: "Men",
+    image: "images/s1.jpeg"
+  },
+  {
+    id: 2,
+    name: "Blue Heels",
+    price: 70,
+    color: "Blue",
+    size: "38",
+    gender: "Women",
+    image: "images/S2.jpg"
+  },
+  {
+    id: 3,
+    name: "Black Running Shoes",
+    price: 90,
+    color: "Black",
+    size: "42",
+    gender: "Unisex",
+    image: "images/S3.jpg"
+  }
+  // Add more products as needed
+];
+
+const productList = document.getElementById("product-list");
+
+// Render products
+function renderProducts(list) {
+  productList.innerHTML = "";
+  list.forEach(p => {
+    const card = document.createElement("div");
+    card.className = "product-card";
+    card.innerHTML = `
+      <img src="${p.image}" alt="${p.name}" />
+      <h4>${p.name}</h4>
+      <p>$${p.price}</p>
+    `;
+    productList.appendChild(card);
+  });
 }
 
+// Apply filters
 function applyFilters() {
   const minPrice = parseFloat(document.getElementById("min-price").value) || 0;
   const maxPrice = parseFloat(document.getElementById("max-price").value) || Infinity;
@@ -11,60 +55,22 @@ function applyFilters() {
   const size = document.getElementById("size").value;
   const gender = document.getElementById("gender").value;
 
-  const filtered = allProducts.filter(p => {
-    return (
-      p.price >= minPrice &&
-      p.price <= maxPrice &&
-      (color === "" || p.color === color) &&
-      (size === "" || p.size === size) &&
-      (gender === "" || p.gender === gender)
-    );
-  });
+  const filtered = products.filter(p =>
+    p.price >= minPrice &&
+    p.price <= maxPrice &&
+    (color === "" || p.color === color) &&
+    (size === "" || p.size === size) &&
+    (gender === "" || p.gender === gender)
+  );
 
   renderProducts(filtered);
 }
 
-function renderProducts(products) {
-  const list = document.getElementById("product-list");
-  list.innerHTML = "";
+// Listen for changes
+["min-price", "max-price", "color", "size", "gender"].forEach(id => {
+  document.getElementById(id).addEventListener("input", applyFilters);
+  document.getElementById(id).addEventListener("change", applyFilters);
+});
 
-  products.forEach(product => {
-    const card = document.createElement("div");
-    card.className = "product-card";
-    card.innerHTML = `
-      <img src="${product.image}" alt="${product.name}">
-      <h4>${product.name}</h4>
-      <p>$${product.price}</p>
-    `;
-    card.onclick = () => showPopup(product);
-    list.appendChild(card);
-  });
-}
-
-function showPopup(product) {
-  const popup = document.getElementById("product-popup");
-
-  popup.innerHTML = `
-    <div class="popup-content">
-      <span class="close-btn" onclick="closePopup()">&times;</span>
-      <img src="${product.image}" alt="${product.name}" />
-      <h2>${product.name}</h2>
-      <p>${product.description}</p>
-      <p><strong>$${product.price}</strong></p>
-      <a class="whatsapp-link" 
-         href="https://wa.me/?text=I%20am%20interested%20in%20product%20ID:%20${product.id}" 
-         target="_blank">📩 Ask on WhatsApp</a>
-    </div>
-  `;
-
-  popup.style.display = "flex";
-}
-
-function closePopup() {
-  document.getElementById("product-popup").style.display = "none";
-}
-
-document.querySelectorAll("#filters input, #filters select")
-  .forEach(el => el.addEventListener("input", applyFilters));
-
-loadProducts();
+// Initial render
+renderProducts(products);

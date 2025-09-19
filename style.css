@@ -3,36 +3,17 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-
-body {
-  background: url("assets/background-image.jpg") no-repeat center center fixed;
-  background-size: cover;
-  color: #fff;
-  min-height: 100vh;
-  overflow-x: hidden;
-  position: relative;
-}
-
-/* Dark overlay */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: -1;
+  font-family: sans-serif;
 }
 
 /* Layout */
-main {
+body {
   display: flex;
+  background: url("assets/background-image.jpg") no-repeat center center / cover;
+  color: #333;
 }
 
-/* Sidebar */
+/* Sidebar Filters */
 #filters {
   position: fixed;
   top: 0;
@@ -40,10 +21,11 @@ main {
   width: 240px;
   background: rgba(1, 119, 184, 0.85);
   padding: 1rem;
-  border-radius: 0 10px 10px 0;
   height: 100vh;
   overflow-y: auto;
   flex-shrink: 0;
+  border-radius: 0; /* no corners */
+  color: white;
 }
 
 .sidebar-header {
@@ -52,143 +34,55 @@ main {
 }
 
 .sidebar-header .logo {
-  max-width: 160px;
-  height: auto;
+  width: 20px;
+  height: 10px;
+  object-fit: contain;
 }
 
-/* Filters */
+/* Filters styling */
 #filters h3 {
-  margin: 0.5rem 0 1rem;
+  margin-bottom: 1rem;
   font-size: 1.2rem;
-  color: #fff;
 }
 
 #filters label {
   display: block;
   margin-top: 0.8rem;
   font-size: 0.9rem;
-  color: #fff;
 }
 
 #filters input,
 #filters select {
-  display: block;
   width: 100%;
-  margin-top: 0.3rem;
   padding: 0.4rem;
-  border-radius: 5px;
+  margin-top: 0.3rem;
   border: none;
-  outline: none;
-  background: #fff;
-  color: #111;
+  border-radius: 2px;
 }
 
-/* Product Grid */
-.product-grid {
-  flex: 1;
-  margin-left: 260px; /* make space for sidebar */
+/* Product grid */
+#product-list {
+  margin-left: 260px;
   padding: 1rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
 }
 
 .product-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: white;
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  text-align: center;
+  transition: transform 0.2s ease;
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  transform: scale(1.03);
 }
 
 .product-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-bottom: 1px solid #333;
-}
-
-.product-card h4 {
-  font-size: 1rem;
-  margin: 0.5rem;
-}
-
-.product-card p {
-  margin: 0 0.5rem 0.8rem;
-  color: #ffce00;
-  font-weight: bold;
-}
-
-/* Popup */
-.popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(5px);
-  background: rgba(0, 0, 0, 0.8);
-  z-index: 2000;
-}
-
-.popup-content {
-  background: #1c1c1c;
-  padding: 2rem;
-  border-radius: 12px;
-  width: 90%;
-  max-width: 500px;
-  text-align: center;
-  position: relative;
-}
-
-.popup-content img {
-  width: 100%;
-  max-height: 250px;
-  object-fit: contain;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-}
-
-.popup-content h2 {
-  margin: 0.5rem 0;
-  color: #ffce00;
-}
-
-.popup-content p {
-  margin: 0.3rem 0;
-  color: #ddd;
-}
-
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 2rem;
-  color: #ffce00;
-  cursor: pointer;
-}
-
-/* WhatsApp Button */
-.whatsapp-link {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.7rem 1.5rem;
-  background: #25d366;
-  color: #111;
-  font-weight: bold;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background 0.2s ease;
-}
-
-.whatsapp-link:hover {
-  background: #1eb954;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 0.5rem;
 }
