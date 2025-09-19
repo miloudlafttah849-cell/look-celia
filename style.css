@@ -13,9 +13,10 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   position: relative;
+  padding-top: 60px; /* make space for fixed header */
 }
 
-/* Overlay to darken background for readability */
+/* Overlay dark fade */
 body::before {
   content: "";
   position: fixed;
@@ -29,44 +30,55 @@ body::before {
 
 /* Header */
 header {
-  text-align: center;
-  padding: 1rem;
-  background: rgba(0, 0, 0, 0.5);
-  border-bottom: 1px solid #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: rgba(1, 119, 184, 0.85);
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  z-index: 1000;
 }
 
 header .logo {
-  max-width: 220px;
+  height: 40px;
+  width: auto;
 }
 
 /* Layout */
 main {
   display: flex;
-  padding: 1rem;
   gap: 2rem;
 }
 
 /* Sidebar Filters */
 #filters {
+  position: fixed;
+  top: 60px; /* below header */
+  left: 0;
   width: 220px;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(1, 119, 184, 0.85);
   padding: 1rem;
-  border-radius: 10px;
+  border-radius: 0 10px 10px 0;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
   flex-shrink: 0;
 }
 
 #filters h3 {
   margin-bottom: 1rem;
   font-size: 1.2rem;
-  color: #ffce00;
+  color: #fff;
 }
 
-/* Each label/input on new line */
+/* Labels stacked */
 #filters label {
   display: block;
   margin-top: 0.8rem;
   font-size: 0.9rem;
-  color: #eee;
+  color: #fff;
 }
 
 #filters input,
@@ -78,13 +90,15 @@ main {
   border-radius: 5px;
   border: none;
   outline: none;
-  background: #222;
-  color: #fff;
+  background: #fff;
+  color: #111;
 }
 
 /* Product Grid */
 .product-grid {
   flex: 1;
+  margin-left: 240px; /* space for fixed sidebar */
+  padding: 1rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1.5rem;
@@ -133,7 +147,7 @@ main {
   justify-content: center;
   backdrop-filter: blur(5px);
   background: rgba(0, 0, 0, 0.8);
-  z-index: 100;
+  z-index: 2000;
 }
 
 .popup-content {
