@@ -1,7 +1,7 @@
 // =================== PRODUCTS DATA ===================
 const products = [
   {
-    id: 1,
+  id: 1,
     name: "Trail Runner X",
     price: 59.99,
     color: "Red",
@@ -173,8 +173,8 @@ const products = [
 ];
 
 // =================== GLOBAL VARS ===================
-let currentSlide = 0;
-let startX = 0;
+let currentSlide= 0;
+let startX= 0;
 let isDragging = false;
 
 // =================== RENDER PRODUCTS ===================
@@ -183,7 +183,7 @@ function renderProducts(filtered = products) {
   container.innerHTML = "";
 
   filtered.forEach((product) => {
-    const item = document.createElement("div");
+  const item = document.createElement("div");
     item.className = "product-item";
     item.innerHTML = `
       <img src="${product.images[0]}" alt="${product.name}" onclick="openProductPopup(${product.id})">
@@ -197,12 +197,12 @@ function renderProducts(filtered = products) {
 
 // =================== FILTER PRODUCTS ===================
 function applyFilters() {
-  const color = document.getElementById("filter-color").value.toLowerCase();
-  const size = document.getElementById("filter-size").value.toLowerCase();
-  const gender = document.getElementById("filter-gender").value.toLowerCase();
-  const minPrice = parseFloat(document.getElementById("filter-min-price").value) || 0;
-  const maxPrice = parseFloat(document.getElementById("filter-max-price").value) || Infinity;
-
+  const color= document.getElementById("color").value.toLowerCase();
+  const size= document.getElementById("size").value.toLowerCase();
+  const gender= document.getElementById("gender").value.toLowerCase();
+  const minPrice= parseFloat(document.getElementById("minPrice").value) || 0;
+  const maxPrice= parseFloat(document.getElementById("maxPrice").value) || Infinity;
+  
   const filtered = products.filter((p) => {
     return (
       (color === "" || p.color.toLowerCase() === color) &&
@@ -220,7 +220,7 @@ function applyFilters() {
 function shareOnWhatsApp(productId) {
   const product = products.find((p) => p.id === productId);
   if (!product) return;
-  const url = `https://cuddly-sniffle-5gp6pxjq494qfpvjg-3002.app.github.dev#product_id=${product.id}`;
+  const url= `https://cuddly-sniffle-5gp6pxjq494qfpvjg-3002.app.github.dev#product_id=${product.id}`;
   const message = `Hi! I am interested in ${product.name}. \n${url}`;
   window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, "_blank");
 }
@@ -230,7 +230,7 @@ function openProductPopup(productId) {
   const product = products.find((p) => p.id === productId);
   if (!product) return;
 
-  const modal = document.getElementById("product-modal");
+  const modal= document.getElementById("product-modal");
   const modalContent = document.querySelector(".modal-content");
   modal.style.display = "flex";
 
@@ -255,7 +255,7 @@ function openProductPopup(productId) {
   updateCarousel();
 
   // Add swipe support
-  const track = modalContent.querySelector(".carousel-track");
+  const track= modalContent.querySelector(".carousel-track");
   track.addEventListener("touchstart", handleTouchStart, { passive: true });
   track.addEventListener("touchmove", handleTouchMove, { passive: true });
   track.addEventListener("touchend", handleTouchEnd);
@@ -263,15 +263,15 @@ function openProductPopup(productId) {
 
 function closeProductPopup() {
   const modal = document.getElementById("product-modal");
-  modal.style.display = "none";
+  modal.style.display= "none";
 }
 
 // =================== CAROUSEL ===================
 function updateCarousel() {
-  const track = document.querySelector(".carousel-track");
-  const slides = document.querySelectorAll(".carousel-track img");
+  const track= document.querySelector(".carousel-track");
+  const slides= document.querySelectorAll(".carousel-track img");
   if (!track || slides.length === 0) return;
-
+  
   const width = slides[0].clientWidth;
   track.style.transform = `translateX(-${currentSlide * width}px)`;
 }
@@ -315,4 +315,5 @@ function handleTouchEnd() {
 // =================== INIT ===================
 window.onload = () => {
   renderProducts();
+  applyFilters();
 };
