@@ -1,72 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Look Celia</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- WhatsApp Icon (Font Awesome) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/a2d9d5a4d4.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- Sidebar Filters -->
+  <!-- Sidebar -->
   <aside class="filters">
-    <!-- Logo -->
-    <div style="text-align: center; margin-bottom: 1rem;">
-      <img src="assets/logo.png" alt="Look Celia Logo" style="width: 20px; height: 10px;">
+    <div class="logo">
+      <img src="assets/logo.png" alt="Look Celia Logo" />
     </div>
 
-    <!-- Price -->
-    <label for="price-min">Min Price</label>
-    <input type="number" id="price-min" placeholder="e.g. 10">
+    <div class="filter-group">
+      <label for="minPrice">Min Price</label>
+      <input type="number" id="minPrice" placeholder="Min" />
 
-    <label for="price-max">Max Price</label>
-    <input type="number" id="price-max" placeholder="e.g. 500">
+      <label for="maxPrice">Max Price</label>
+      <input type="number" id="maxPrice" placeholder="Max" />
 
-    <!-- Color -->
-    <label for="color">Color</label>
-    <select id="color">
-      <option value="">All</option>
-      <option value="black">Black</option>
-      <option value="white">White</option>
-      <option value="red">Red</option>
-      <option value="blue">Blue</option>
-    </select>
+      <label for="color">Color</label>
+      <input type="text" id="color" placeholder="e.g. black" />
 
-    <!-- Size -->
-    <label for="size">Size</label>
-    <select id="size">
-      <option value="">All</option>
-      <option value="38">38</option>
-      <option value="39">39</option>
-      <option value="40">40</option>
-      <option value="41">41</option>
-      <option value="42">42</option>
-    </select>
+      <label for="size">Size</label>
+      <input type="text" id="size" placeholder="e.g. 42" />
 
-    <!-- Gender -->
-    <label for="gender">Gender</label>
-    <select id="gender">
-      <option value="">All</option>
-      <option value="men">Men</option>
-      <option value="women">Women</option>
-      <option value="unisex">Unisex</option>
-    </select>
-
-    <!-- Contact Us Button -->
-    <div style="margin-top: 2rem; text-align: center;">
-      <a href="https://wa.me/212600000000?text=Hello%20I%20am%20interested%20in%20your%20products"
-         target="_blank"
-         class="whatsapp-link"
-         style="display: flex; align-items: center; justify-content: center; font-size: 1rem; padding: 0.6rem; background: #25d366;">
-         <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> Contact Us
-      </a>
+      <label for="gender">Gender</label>
+      <select id="gender">
+        <option value="">All</option>
+        <option value="men">Men</option>
+        <option value="women">Women</option>
+        <option value="unisex">Unisex</option>
+      </select>
     </div>
+
+    <button onclick="applyFilters()">Apply Filters</button>
+
+    <!-- Contact -->
+    <a 
+      href="https://wa.me/212600000000?text=Hi!%20I%20am%20interested%20in%20your%20products." 
+      target="_blank" 
+      class="contact-whatsapp">
+      <i class="fab fa-whatsapp"></i> Contact Us
+    </a>
   </aside>
 
-  <!-- Products Grid -->
+  <!-- Main Content -->
   <main class="products" id="products"></main>
 
+  <!-- Product Modal -->
+  <div id="product-modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeProductPopup()">&times;</span>
+      <div id="product-modal-content"></div>
+    </div>
+  </div>
+
+  <script src="products.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

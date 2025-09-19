@@ -6,115 +6,215 @@
 }
 
 body {
+  display: flex;
   font-family: Arial, sans-serif;
-  background: url("assets/background-image.jpg") no-repeat center center fixed;
+  background: url('assets/background-image.jpg') no-repeat center center fixed;
   background-size: cover;
-  min-height: 100vh;
-  display: flex;
+  color: #333;
 }
 
-/* Sidebar filters */
+/* Sidebar (filters) */
 .filters {
-  width: 260px;
-  padding: 1rem;
-  background: rgba(1, 119, 184, 0.85);
-  color: white;
   position: fixed;
-  top: 0;
   left: 0;
-  height: 100vh;
-  overflow-y: auto;
-}
-
-.filters h2 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+  top: 0;
+  width: 260px;
+  height: 100%;
+  background: rgba(1, 119, 184, 0.9);
+  padding: 1rem;
   display: flex;
-  align-items: center;
-  gap: 10px;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 10;
 }
 
-.filters img {
-  width: 20px;
-  height: 10px;
+.logo img {
+  width: auto;
+  height: 72px;
+  margin-bottom: 1rem;
 }
 
-/* Filter controls */
-.filters label {
-  display: block;
-  margin-top: 1rem;
-  margin-bottom: 0.3rem;
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-group label {
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.filter-group input,
+.filter-group select {
+  padding: 0.4rem;
+  border: none;
+  outline: none;
+}
+
+.filters button {
+  background: #fff;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
   font-weight: bold;
 }
 
-.filters input,
-.filters select {
-  width: 100%;
-  padding: 0.4rem;
-  border: none;
-  margin-bottom: 0.5rem;
+.contact-whatsapp {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-/* Product grid */
+.contact-whatsapp i {
+  font-size: 1.5rem;
+}
+
+/* Products grid */
 .products {
   margin-left: 260px;
   padding: 1rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1rem;
-  width: calc(100% - 260px);
 }
 
-/* Product card */
 .product-card {
-  background: white;
+  background: rgba(255, 255, 255, 0.9);
   border: 1px solid #ddd;
+  padding: 0.8rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0.5rem;
-  text-align: center;
-  transition: transform 0.2s ease;
-}
-
-.product-card:hover {
-  transform: scale(1.03);
+  cursor: pointer;
 }
 
 .product-image img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
-  display: block;
-  margin: 0 auto 0.5rem auto;
 }
 
 .product-info {
-  margin-top: auto;
+  margin-top: 0.5rem;
 }
 
 .product-info h4 {
-  margin-bottom: 0.3rem;
   font-size: 1rem;
+  margin-bottom: 0.3rem;
 }
 
 .product-info p {
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-  font-size: 0.95rem;
-}
-
-/* WhatsApp button */
-.whatsapp-link {
-  display: inline-block;
-  margin-top: 0.5rem;
-  padding: 0.3rem 0.6rem;
-  background: #25d366;
-  color: white;
-  text-decoration: none;
-  border-radius: 3px;
   font-size: 0.9rem;
+  margin-bottom: 0.5rem;
 }
 
-.whatsapp-link:hover {
-  background: #1ebe57;
+.whatsapp-link-product {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: #25d366;
+  color: #fff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.whatsapp-link-product i {
+  font-size: 1rem;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 20;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background: #fff;
+  margin: 5% auto;
+  padding: 1rem;
+  border-radius: 4px;
+  max-width: 600px;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Carousel */
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel img {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(1, 119, 184, 0.7);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  .filters {
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .products {
+    margin-left: 0;
+  }
+
+  .logo img {
+    height: 48px;
+  }
 }
