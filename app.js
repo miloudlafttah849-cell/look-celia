@@ -132,4 +132,23 @@ function closePopup() {
   document.getElementById("product-popup").style.display = "none";
 }
 
+function showPopup(product) {
+  const popup = document.getElementById("product-popup");
+
+  popup.innerHTML = `
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+      <img src="${product.image}" alt="${product.name}" />
+      <h2>${product.name}</h2>
+      <p>${product.description}</p>
+      <p><strong>$${product.price}</strong></p>
+      <a class="whatsapp-link" 
+         href="https://wa.me/?text=I%20am%20interested%20in%20product%20ID:%20${product.id}" 
+         target="_blank">📩 Ask on WhatsApp</a>
+    </div>
+  `;
+
+  popup.style.display = "flex";
+}
+
 document.addEventListener("DOMContentLoaded", loadProducts);
