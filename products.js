@@ -7,9 +7,9 @@ const products = [
     size: "41",
     gender: "men",
     images: [
-      "https://look-celia.vercel.app/images/s1.jpeg",
-      "https://look-celia.vercel.app/images/S2.jpg",
-      "https://look-celia.vercel.app/images/S3.jpg"
+      "https://cuddly-sniffle-5gp6pxjq494qfpvjg-3002.app.github.dev/images/s1.jpeg",
+      "https://cuddly-sniffle-5gp6pxjq494qfpvjg-3002.app.github.dev/images/S2.jpg",
+      "https://cuddly-sniffle-5gp6pxjq494qfpvjg-3002.app.github.dev/images/S3.jpg"
     ],
     description: "Lightweight running shoes designed for speed and comfort."
   },
@@ -21,8 +21,8 @@ const products = [
     size: "39",
     gender: "women",
     images: [
-      "https://look-celia.vercel.app/images/S4.jpeg",
-      "https://look-celia.vercel.app/images/S5.jpg"
+      "https://cuddly-sniffle-5gp6pxjq494qfpvjg-3002.app.github.dev/images/S4.jpeg",
+      "https://cuddly-sniffle-5gp6pxjq494qfpvjg-3002.app.github.dev/images/S5.jpg"
     ],
     description: "Trendy sneakers perfect for casual streetwear fashion."
   },
@@ -34,9 +34,9 @@ const products = [
     size: "42",
     gender: "men",
     images: [
-      "https://look-celia.vercel.app/images/S6.jpeg",
-      "https://look-celia.vercel.app/images/S7.jpeg",
-      "https://look-celia.vercel.app/images/s8.jpg"
+      "https://cuddly-sniffle-5gp6pxjq494qfpvjg-3002.app.github.dev/images/S6.jpeg",
+      "https://cuddly-sniffle-5gp6pxjq494qfpvjg-3002.app.github.dev/images/S7.jpeg",
+      "https://cuddly-sniffle-5gp6pxjq494qfpvjg-3002.app.github.dev/images/s8.jpg"
     ],
     description: "Stability-focused shoes built for heavy training sessions."
   },
@@ -48,8 +48,8 @@ const products = [
     size: "40",
     gender: "women",
     images: [
-      "https://look-celia.vercel.app/images/S9.jpeg",
-      "https://look-celia.vercel.app/images/s10.webp"
+      "https://cuddly-sniffle-5gp6pxjq494qfpvjg-3002.app.github.dev/images/S9.jpeg",
+      "https://cuddly-sniffle-5gp6pxjq494qfpvjg-3002.app.github.dev/images/s10.webp"
     ],
     description: "Ultra-cushioned shoes with breathable mesh for all-day wear."
   },
@@ -61,8 +61,8 @@ const products = [
     size: "38",
     gender: "unisex",
     images: [
-      "https://look-celia.vercel.app/images/s11.jpg",
-      "https://look-celia.vercel.app/images/S12.jpeg"
+      "https://cuddly-sniffle-5gp6pxjq494qfpvjg-3002.app.github.dev/images/s11.jpg",
+      "https://cuddly-sniffle-5gp6pxjq494qfpvjg-3002.app.github.dev/images/S12.jpeg"
     ],
     description: "Vintage-inspired sneakers that bring back the 90s style."
   },
@@ -74,9 +74,9 @@ const products = [
     size: "41",
     gender: "men",
     images: [
-      "https://look-celia.vercel.app/images/S13.jpg",
-      "https://look-celia.vercel.app/images/S14.jpeg",
-      "https://look-celia.vercel.app/images/S15.webp"
+      "https://cuddly-sniffle-5gp6pxjq494qfpvjg-3002.app.github.dev/images/S13.jpg",
+      "https://cuddly-sniffle-5gp6pxjq494qfpvjg-3002.app.github.dev/images/S14.jpeg",
+      "https://cuddly-sniffle-5gp6pxjq494qfpvjg-3002.app.github.dev/images/S15.webp"
     ],
     description: "High-performance racing shoes with aggressive traction."
   },
@@ -88,8 +88,8 @@ const products = [
     size: "42",
     gender: "unisex",
     images: [
-      "https://look-celia.vercel.app/images/S16.jpeg",
-      "https://look-celia.vercel.app/images/S17.jpg"
+      "https://cuddly-sniffle-5gp6pxjq494qfpvjg-3002.app.github.dev/images/S16.jpeg",
+      "https://cuddly-sniffle-5gp6pxjq494qfpvjg-3002.app.github.dev/images/S17.jpg"
     ],
     description: "Versatile sport shoes with flexibility for everyday training."
   }

@@ -220,7 +220,7 @@ function applyFilters() {
 function shareOnWhatsApp(productId) {
   const product = products.find((p) => p.id === productId);
   if (!product) return;
-  const url = `https://look-celia.vercel.app#product_id=${product.id}`;
+  const url = `https://cuddly-sniffle-5gp6pxjq494qfpvjg-3002.app.github.dev#product_id=${product.id}`;
   const message = `Hi! I am interested in ${product.name}. \n${url}`;
   window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, "_blank");
 }
